@@ -1,0 +1,9 @@
+name: CI
+
+on: push
+jobs:
+    prod-check:
+        if: ${{ github.ref == 'refs/heads/main' }}
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "This is the production check job running on the branch $GITHUB_REF."
